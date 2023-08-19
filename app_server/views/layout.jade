@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title My Blog Page
+    title=title
     // Bootstrap CSS
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css')
     // Custom CSS for background and text color
@@ -10,7 +10,7 @@ html
   body
     // Navbar section
     nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
-      a.navbar-brand(href='/profile') My Blog
+      a.navbar-brand(href='/') My Blog
       button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
         span.navbar-toggler-icon
       #navbarSupportedContent.collapse.navbar-collapse
@@ -28,27 +28,14 @@ html
     .container
       h2.my-4 Recent posts
       .row
-        .col-md-4.mb-4
-          .card
-            img.card-img-top(src='https://via.placeholder.com/300x200', alt='Card image cap')
-            .card-body
-              h5.card-title Blog post 1
-              p.card-text This is a brief description of blog post 1.
-              a.btn.btn-primary(href='#') Read More &rarr;
-        .col-md-4.mb-4
-          .card
-            img.card-img-top(src='https://via.placeholder.com/300x200', alt='Card image cap')
-            .card-body
-              h5.card-title Blog post 2
-              p.card-text This is a brief description of blog post 2.
-              a.btn.btn-primary(href='#') Read More &rarr;
-        .col-md-4.mb-4
-          .card
-            img.card-img-top(src='https://via.placeholder.com/300x200', alt='Card image cap')
-            .card-body
-              h5.card-title Blog post 3
-              p.card-text This is a brief description of blog post 3.
-              a.btn.btn-primary(href='#') Read More &rarr;
+        each post in blog
+          .col-md-4.mb-4
+            .card
+              img.card-img-top(src='/images/#{post.img}', alt='Card image cap',style='height: 300px; object-fit: cover;')
+              .card-body
+                h5.card-title= post.atitle
+                p.card-text= post.desc
+                a.btn.btn-primary(href='') Read More &rarr;
 
     // Bootstrap JS
     script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js')

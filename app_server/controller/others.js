@@ -1,8 +1,6 @@
 const express = require('express')
 
-var home=(req,res)=>{
-    res.render('index',{title:'Home'})
-}
+
 const login = (req,res)=>{
     res.render('login',{title:'Login'});
 }
@@ -20,4 +18,4 @@ const contact = (req,res)=>{
 
 
 
-module.exports = {login,register,about,contact,home}
+module.exports = {login,register,about,contact}
