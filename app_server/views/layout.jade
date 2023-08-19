@@ -28,7 +28,7 @@ html
     .container
       h2.my-4 Recent posts
       .row
-        each post in blog
+        each post in blog || []
           .col-md-4.mb-4
             .card
               img.card-img-top(src='/images/#{post.img}', alt='Card image cap',style='height: 300px; object-fit: cover;')
