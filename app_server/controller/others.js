@@ -1,10 +1,23 @@
 const express = require('express')
 
+var home=(req,res)=>{
+    res.render('index',{title:'Home'})
+}
 const login = (req,res)=>{
-    res.render('login');
+    res.render('login',{title:'Login'});
 }
 const register  = (req,res)=>{
-    res.render('register')
+    res.render('register',{title:"Register"});
 }
 
-module.exports = {login,register}
+const about = (req,res)=>{
+    res.render('about',{title:'About'});
+}
+
+const contact = (req,res)=>{
+    res.render('contact',{title:'contact'})
+}
+
+
+
+module.exports = {login,register,about,contact,home}
