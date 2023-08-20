@@ -24,18 +24,13 @@ html
         ul.navbar-nav.ml-auto
           li.nav-item
             a.nav-link(href='/login') Login 
-    // Blog cards section
+        // Article details section
     .container
-      h2.my-4 Recent posts
       .row
-        each post,i in blog || []
-          .col-md-4.mb-4
-            .card
-              img.card-img-top(src='/images/#{post.img}', alt='Card image cap',style='height: 300px; object-fit: cover;')
-              .card-body
-                h5.card-title= post.atitle
-                p.card-text= post.desc
-                a.btn.btn-primary(href='/article-info?article='+i) Read More &rarr;
+        .col-md-8.offset-md-2.mt-5
+          h2.my-4= article.title
+          img.img-fluid.mb-4(src='/images/' + article.img, alt='Article Image')
+          p= article.info
 
     // Bootstrap JS
     script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js')
