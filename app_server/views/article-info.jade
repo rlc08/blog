@@ -2,13 +2,10 @@ doctype html
 html
   head
     title=title
-    // Bootstrap CSS
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css')
-    // Custom CSS for background and text color
     link(rel='stylesheet',href='/stylesheets/style.css')
 
   body
-    // Navbar section
     nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
       a.navbar-brand(href='/') My Blog
       button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
@@ -24,15 +21,16 @@ html
         ul.navbar-nav.ml-auto
           li.nav-item
             a.nav-link(href='/login') Login 
-        // Article details section
+    
     .container
-      .row
-        .col-md-8.offset-md-2.mt-5
-          h2.my-4= article.title
-          img.img-fluid.mb-4(src='/images/' + article.img, alt='Article Image')
-          p= article.info
-
-    // Bootstrap JS
+      .row.justify-content-center.mt-5
+        .col-md-8
+          .card.shadow-lg
+            .card-body
+              h2.card-title.text-primary.text-center.mb-4= article.title
+              .d-flex.justify-content-center.mb-4
+                img.card-img-top.img-fluid(src='/images/' + article.img, alt='Article Image', style='max-height: 50vh; object-fit: cover;')
+              p.card-text= article.info
     script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js')
     script(src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js')
