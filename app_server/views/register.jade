@@ -1,11 +1,11 @@
 doctype html
 html
   head
-    meta(name='viewport' content='width=device-width, initial-scale=1.0')
-    title Login
-    link(rel='stylesheet' href='/bootstrap/css/amelia.bootstrap.css')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Register
+    link(rel='stylesheet', href='/bootstrap/css/amelia.bootstrap.css')
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css')
-    link(rel='stylesheet' href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
     
 
   body
@@ -31,22 +31,22 @@ html
             .card(style='border-radius: 15px')
               .card-body.p-5
                 h2.text-uppercase.text-center.mb-5 Create an account
-                form
+                form(action='/auth/register', method='post')  
                   .form-outline.mb-4
-                    input#form3Example1cg.form-control.form-control-lg(type='text')
-                    label Your Name
+                    input#form3Example1cg.form-control.form-control-lg(type='text', name='firstName', required)
+                    label(for='form3Example1cg') First Name
                   .form-outline.mb-4
-                    input.form-control.form-control-lg(type='email')
-                    label.form-label(for='form3Example3cg') Your Email
+                    input.form-control.form-control-lg(type='text', name='lastName', required)
+                    label.form-label(for='form3Example3cg') Last Name
                   .form-outline.mb-4
-                    input.form-control.form-control-lg(type='password')
-                    label.form-label(for='form3Example4cg') Password
+                    input.form-control.form-control-lg(type='email', name='email', required)
+                    label.form-label(for='form3Example4cg') Email
                   .form-outline.mb-4
-                    input.form-control.form-control-lg(type='password')
-                    label.form-label(for='form3Example4cdg') Repeat your password
+                    input.form-control.form-control-lg(type='password', name='password', required)
+                    label.form-label(for='form3Example4cdg') Password
 
                   .d-flex.justify-content-center
-                    button.btn.btn-success.btn-block.btn-lg.gradient-custom-4.text-body(type='button' style='background: #84fab0;                                            background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));                                            background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1))') Register
+                    button.btn.btn-success.btn-block.btn-lg.gradient-custom-4.text-body(type='submit' style='background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1))') Register
                   p.text-center.text-muted.mt-5.mb-0
                     | Have already an account? 
                     a.fw-bold.text-body(href='/login')

@@ -1,10 +1,9 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const { getUser } = require('../controller/users.js');
+const { verifyToken } = require('../../middleware/auth.js');
+const router = express.Router();
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
-
+// Apply the verifyToken middleware to routes that require authentication
+router.get("/:id", verifyToken, getUser);
 
 module.exports = router;
